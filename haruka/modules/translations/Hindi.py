@@ -405,7 +405,7 @@ el caso de los datos mencionados anteriormente.""",
 
 #__main__
     #Module names
-        "Admin": "Administrador",
+        "Admin": "प्रशासक",
         "AFK": "Ausente (AFK)",
         "AntiFlood": "Antiflood",
         "Bans": "Bans",
