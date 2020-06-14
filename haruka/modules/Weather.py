@@ -10,11 +10,11 @@ from haruka.modules.disable import DisableAbleCommandHandler
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import pyowm
-import TOKEN,OW_TOKEN
+import TOKEN,API_OPENWEATHER
 
 @run_async
 def weather(bot: Bot, update: Update, args: List[str]):
-    owm = pyowm.OWM(OW_TOKEN)
+    owm = pyowm.OWM(API_OPENWEATHER)
     text_location = "".join(str(x) for x in args)
     observation = owm.weather_at_place(text_location)
     w = observation.get_weather()
