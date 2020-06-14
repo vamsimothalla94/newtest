@@ -128,7 +128,7 @@ HindiStrings = {
     "Connection failed!": "कनेक्शन विफल!",
     "Connections to this chat not allowed!": "इस चैट के कनेक्शनों को अनुमति नहीं है!!",
     "Write chat ID to connect!": "कनेक्ट करने के लिए चैट आईडी लिखें",
-    "Usage limited to PMs only!": केवल पीएम तक सीमित उपयोग!",
+    "Usage limited to PMs only!": "केवल पीएम तक सीमित उपयोग!",
 
 #Misc
     "RUNS-K": RUN_STRINGS,
