@@ -14,7 +14,6 @@ import TOKEN,OW_TOKEN
 
 @run_async
 def weather(bot: Bot, update: Update, args: List[str]):
-	"""Define weather at certain location"""
     owm = pyowm.OWM(OW_TOKEN)
     text_location = "".join(str(x) for x in args)
     observation = owm.weather_at_place(text_location)
