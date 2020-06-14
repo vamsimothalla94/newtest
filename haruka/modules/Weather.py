@@ -13,7 +13,7 @@ import pyowm
 import TOKEN,OW_TOKEN
 
 @run_async
-def weatherbot(bot: Bot, update: Update, args: List[str]):
+def weather(bot: Bot, update: Update, args: List[str]):
 	"""Define weather at certain location"""
     owm = pyowm.OWM(OW_TOKEN)
     text_location = "".join(str(x) for x in args)
@@ -32,4 +32,6 @@ def weatherbot(bot: Bot, update: Update, args: List[str]):
     update.message.reply_text("Wind speed, m/s: {}".format(text_wind))
     update.message.reply_text("Humidity, %: {}".format(text_humidity))
 
+
+__mod_name__ = "Weather"
 	
