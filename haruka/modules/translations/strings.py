@@ -5,7 +5,7 @@ from haruka.modules.translations.Ukraine import UkrainianStrings
 from haruka.modules.translations.Spanish import SpanishStrings
 from haruka.modules.translations.Turkish import TurkishStrings
 from haruka.modules.translations.Indonesian import IndonesianStrings
-
+from haruka.modulea.translations.Hindi import HindiStrings
 def tld(chat_id, t, show_none=True):
     LANGUAGE = prev_locale(chat_id)
     print(chat_id, t)
