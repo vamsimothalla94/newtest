@@ -110,4 +110,58 @@ MARKDOWN_HELP = """
 - <कोड> [बटन ] (buttonurl: someURL) </ code>: यह एक विशेष वृद्धि है जो उपयोगकर्ताओं को टेलीग्राम बटन की अनुमति देता है।  <code> bottontext </ code> वह नाम होगा जो बटन पर दिखाई देता है, और <code> someURL </ code> \ वेब पेज या URL होगा जो ईजी दबाने पर खोला जाएगा: <कोड> [यह एक बटन है  (buttonurl: example.com)
  </code> यदि आप एक ही पंक्ति में कई बटन लगाना चाहते हैं, तो उपयोग करें: एक जैसे, यहाँ: <code> [one] (buttonurl://example.com) [two] (buttonurl: //google.com:same) </ code> यह प्रत्येक लाइन पर एक के बजाय एक ही लाइन पर दो बटन बनाएगा। 
 """
-HindiStrings{}
+HindiStrings{
+
+#Misc
+    "RUNS-K": RUN_STRINGS,
+    "SLAP_TEMPLATES-K": SLAP_TEMPLATES,
+    "ITEMS-K": ITEMS,
+    "HIT-K": HIT,
+    "THROW-K": THROW,
+    "ITEMP-K": ITEMS,
+    "ITEMR-K": ITEMS,
+    "MARKDOWN_HELP-K": MARKDOWN_HELP,
+
+    "The original sender, {}, has an ID of `{}`.\nThe forwarder, {}, has an ID of `{}`.":
+        "El remitente, {}, tiene el ID `{}`.\nEl receptor, {}, tiene el ID `{}`.",
+    "{}'s id is `{}`.": "ID {} - `{}`.",
+    "Your id is `{}`.": "Tu ID - `{}`.",
+    "This group's id is `{}`.": "ID de este grupo - `{}`.",
+
+    "I can't extract a user from this.": "No puedo recuperar el ID de este usuario",
+    "<b>User info</b>:": "<b>Información del usuario</b>:",
+    "\nFirst Name: {}": "\nNombre: {}",
+    "\nLast Name: {}": "\nApellido: {}",
+    "\nUsername: @{}": "\nNombre de usuario: @{}",
+    "\nPermanent user link: {}": "\nLink permanente del usuario: {}",
+    "\n\nThis person is my owner - I would never do anything against them!":
+        "\n\nEsta persona es mi dueñ@, nunca haría nada contra él/ella!",
+    "\nThis person is one of my sudo users! Nearly as powerful as my owner - so watch it.":
+        "\nEsta persona es un@ de mis usuari@s sudo! Casi con tanto poder como mi dueñ@, así que ten cuidado",
+    "\nThis person is one of my support users! Not quite a sudo user, but can still gban you off the map.":
+        "\nEsta persona es uno de mis usuarios con derechos. No es como un usuario sudo, pero te puede dar global ban, ten cuidado!",
+    "\nThis person has been whitelisted! That means I'm not allowed to ban/kick them.":
+        "\nEsta persona está en la lista blanca. Esto signidica que no puedo banearla ni echarla.",
+
+    "Its always banhammer time for me!": "Siempre es la hora banhammer para mi!",
+
+    "It's {} in {}": "Está {} en {}",
+
+    "Please reply to a sticker to get its ID.": "Por favor responde a un stciker para obtener su ID.",
+    "Please reply to a sticker for me to upload its PNG.": "Por favor, responde a un sticker para que pueda subir su PNG .",
+
+    "Write a location to check the weather.": "Escribe una ubicación para ver que tiempo hace.",
+    "I will keep an eye on both happy and sad times!": "Estaré aquí en las buenas y en las malas!",
+    "Today in {} is being {}, around {}°C.\n": "Hoy en {} hace {}, alrededor de {}°C.\n",
+    "Sorry, location not found.": "Lo siento, ubicación no encontrada.",
+
+    "Deleting identifiable data...": "Borrando datos de usuario...",
+
+    "Try forwarding the following message to me, and you'll see!":
+        "Prueba a enviarme el siguiente mensaje y lo verás!",
+    "/save test This is a markdown test. _italics_, *bold*, `code`, [URL](example.com) [button](buttonurl:github.com) [button2](buttonurl://google.com:same)":
+    """/save test Esto es un test de markdown. _cursiva_, *negrita*, `codigo`, \
+[URL](example.com) 
+[Botón](buttonurl:github.com)
+[Botón2](buttonurl://google.com:same)""",
+}
