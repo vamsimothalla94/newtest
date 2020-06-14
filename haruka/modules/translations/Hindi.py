@@ -121,14 +121,14 @@ MARKDOWN_HELP = """
 HindiStrings = {
 
 #Connections
-    "Disabled connections to this chat for users": "Conexiones deshabilitadas en este chat para los usuarios",
-    "Enabled connections to this chat for users": "Conexiones habilitadas en este chat para los usuarios",
-    "Please enter on/yes/off/no in group!": "Por favor escribe on/yes/off/no en el grupo!",
-    "Successfully connected to *{}*": "Conectado correctamente a *{}*",
-    "Connection failed!": "Conexión fallida!",
-    "Connections to this chat not allowed!": "Conexiones no permitidas en este chat!",
-    "Write chat ID to connect!": "Escribe el ID del chat para conectar!",
-    "Usage limited to PMs only!": "Uso restringido solo a mensajes privados",
+    "Disabled connections to this chat for users": "उपयोगकर्ताओं के लिए इस चैट में अक्षम कनेक्शन",
+    "Enabled connections to this chat for users": "उपयोगकर्ताओं के लिए इस चैट में सक्षम कनेक्शन",
+    "Please enter on/yes/off/no in group!": "कृपया समूह में 0n/off/yes/no दर्ज करें!!",
+    "Successfully connected to *{}*": "से सफलतापूर्वक जुड़ा हुआ है *{}*",
+    "Connection failed!": "कनेक्शन विफल!",
+    "Connections to this chat not allowed!": "इस चैट के कनेक्शनों को अनुमति नहीं है!!",
+    "Write chat ID to connect!": "कनेक्ट करने के लिए चैट आईडी लिखें",
+    "Usage limited to PMs only!": केवल पीएम तक सीमित उपयोग!",
 
 #Misc
     "RUNS-K": RUN_STRINGS,
