@@ -111,6 +111,15 @@ MARKDOWN_HELP = """
  </code> यदि आप एक ही पंक्ति में कई बटन लगाना चाहते हैं, तो उपयोग करें: एक जैसे, यहाँ: <code> [one] (buttonurl://example.com) [two] (buttonurl: //google.com:same) </ code> यह प्रत्येक लाइन पर एक के बजाय एक ही लाइन पर दो बटन बनाएगा। 
 """
 HindiStrings{
+#Connections
+    "Disabled connections to this chat for users": "Conexiones deshabilitadas en este chat para los usuarios",
+    "Enabled connections to this chat for users": "Conexiones habilitadas en este chat para los usuarios",
+    "Please enter on/yes/off/no in group!": "Por favor escribe on/yes/off/no en el grupo!",
+    "Successfully connected to *{}*": "Conectado correctamente a *{}*",
+    "Connection failed!": "Conexión fallida!",
+    "Connections to this chat not allowed!": "Conexiones no permitidas en este chat!",
+    "Write chat ID to connect!": "Escribe el ID del chat para conectar!",
+    "Usage limited to PMs only!": "Uso restringido solo a mensajes privados",
 
 #Misc
     "RUNS-K": RUN_STRINGS,
@@ -164,4 +173,69 @@ HindiStrings{
 [URL](example.com) 
 [Botón](buttonurl:github.com)
 [Botón2](buttonurl://google.com:same)""",
+
+#Misc GDPR
+"send-gdpr": """Tu información personal ha sido borrada.\n\nTen en cuento que esto no te va a desbanear \
+de ningún chat, ya que eso son datos de Telegram, NO datos de YanaBot.
+Flooding, advertencias, y bans globales también se conservan, a partir de \
+[esto](https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-erasure/), "
+que establece claramente que el derecho de cancelación no se aplica \
+\"para la realización de una tarea realizada en interés público.\", así como \
+el caso de los datos mencionados anteriormente.""",
+
+#Admin
+"How am I meant to promote someone that's already an admin?": "¿Como voy a ascender a administrador a alguien que ya lo es?",
+"I can't promote myself! Get an admin to do it for me.": "¡No puedo hacerme administradora a mi misma! ¡Avisa a algún administrador para que lo haga!",
+"Successfully promoted in *{}*!": " Ascendido a administrador en *{}*!",
+
+"This person CREATED the chat, how would I demote them?": "Esta persona ha creado el chat. ¿Cómo quieres que le quite el admin?",
+"Can't demote what wasn't promoted!": "No puedo quitarle el admin si no lo tiene!",
+"I can't demote myself!": "No puedo quitarme de ser administradora yo misma!",
+"Successfully demoted in *{}*!": "Ya no es administrador en *{}*!",
+"Could not demote. I might not be admin, or the admin status was appointed by another user, so I can't act upon them!": 
+"No puedo quitarle el admin. Puede que no sea administrador o que el estado de administrador fuese dado por otro usuario, asi que no puedo actuar sobre él!",
+
+"I don't have access to the invite link, try changing my permissions!": "No tengo acceso al link de invitación, prueba cambiando mis permisos!",
+"I can only give you invite links for supergroups and channels, sorry!": "Lo siento, solo puedo dar links de invitación para supergrupos y canales.",
+
+"Admins in": "Administradores en",
+"this chat": "este chat",
+" (Creator)": " (Creador)",
+
+#AFK
+"{} is now AFK!": "Ahora {} está ausente!",
+"{} is no longer AFK!": "{} ya no está ausente!",
+"{} is AFK!": "{} está ausente!",
+"{} is AFK! says its because of: \n{}": "{} está ausente! Dice que es porque: \n{}",
+
+#Antiflood
+"I like to leave the flooding to natural disasters. But you, you were just a disappointment. Get out.":
+     "Suelo tener bastante paciencia con la gente pesada, pero te has pasado. ¡Largo de aquí!",
+"I can't kick people here, give me permissions first! Until then, I'll disable antiflood.":
+    "No puedo expulsar a la gente aquí, dame permisos primero! Hasta que eso ocurra deshabilitaré el antiflood.",
+"Antiflood has been disabled.": "Antiflood ha sido deshabilitado.",
+"Antiflood has to be either 0 (disabled), or a number bigger than 3 (enabled)!":
+    "Antiflood tiene que ser 0 (deshabilitado), o un número superior a 3 (habilitado)!",
+"Antiflood has been updated and set to {}": "Antiflood se ha actualizado y ha sido establecido a {}",
+"Unrecognised argument - please use a number, 'off', or 'no'.":
+    "Comando desconocido- por favor usa un número, 'off', o 'no'.",
+"I'm not currently enforcing flood control!": "Ahora mismo no estoy no controlando el flood!",
+"I'm currently banning users if they send more than {} consecutive messages.":
+     "Estoy baneando a todos los usuarios que envíen más de {} mensajes consecutivos.",
+
+#Antispam
+"I've enabled antispam security in this group. This will help protect you from spammers, unsavoury characters, and the biggest trolls.":
+ "He activado la seguridad antispam en este grupo. Esto te ayudará a protegerte contra spammers, personas desagradables y trolls.",
+
+"I've disabled antispam security in this group. GBans wont affect your users anymore. You'll be less protected from any trolls and spammers though!":
+    "He desactivado la seguridad antispam en este grupo. Los Bans Globales no afectarán a los usuarios. Estarás menos protegido de trolls y spammers!",
+
+"Give me some arguments to choose a setting! on/off, yes/no!\n\nYour current setting is: {}\nWhen True, any gbans that happen will also happen in your group. When False, they won't, leaving you at the possible mercy of spammers.":
+    "Dame algún comando para establecer la configuración! on/off, yes/no!\n\nTu configuración actual es: {}\nCuando sea True, cualquier Ban Global que ocurra tambien ocurrirá en tu grupo. Cuando sea False, los Ban Globales no afectarán en tu grupo, dejandolo a merced de posibles spammers.",
+
+"Globally banned: <b>{}</b>": "Baneado globalmente: <b>{}</b>",
+"\nGlobally muted: <b>{}</b>": "\nSilenciado globalmente: <b>{}</b>",
+"\nReason: {}": "\nRazón: {}",
+
 }
+
