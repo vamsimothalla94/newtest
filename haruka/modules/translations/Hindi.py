@@ -724,4 +724,4 @@ respondiendo al mensaje con la imagen/gif/video mediante /setwelcome.
  - /welcomesecurity <off/soft/hard>: soft - restringe los permisos del usuario que acaba de entrar, de tal forma que no puede enviar media durante 24 horas, hard - restringe los permisos del usuario para enviar mensages hasta que hace click en el mensaje de \"No soy un bot.\"
 """
 
-
+}
