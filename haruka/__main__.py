@@ -25,7 +25,7 @@ PM_START = """Hello {}, my name is {}!
 You know how hard it is sometimes to manage group so here is the solution for you
 
 
-Helper owner is [Vamsi 🇮🇳](t.me/vamsimothalla)
+Helper owner is [Vamsi M](t.me/vamsimothalla)
 
 
 Click /help or Help button below to find out more about how to use me to my full potential.
