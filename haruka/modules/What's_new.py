@@ -21,9 +21,10 @@ def whats_new(bot: Bot, update: Update, args: List[str]):
     lan = " ".join(args)
 
 
-__help__ = """*What's new *
-             -added hindi(beta) language
-              Note: hindi is under beta
+__help__ = """    *What's new* V:0.7-beta 
+       ✓Added Hindi(beta) language
+
+       *Note*: Hindi is under beta some errors may occur
 """
 
 __mod_name__ = "What's New"
