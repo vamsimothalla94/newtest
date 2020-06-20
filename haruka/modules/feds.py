@@ -1049,8 +1049,8 @@ def is_user_fed_owner(fed_id, user_id):
 		return False
 def fstats(bot, update):
         all_fbanned = sql.get_all_fban_users_global()
-	all_feds = sql.get_all_feds_users_global()
-	return "{} fbanned users, accross {} feds".format(len(all_fbanned), len(all_feds))
+        all_feds = sql.get_all_feds_users_global()
+        return "{} fbanned users, accross {} feds".format(len(all_fbanned), len(all_feds))
 
 
 
