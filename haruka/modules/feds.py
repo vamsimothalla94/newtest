@@ -1161,6 +1161,7 @@ FED_IMPORTBAN_HANDLER = CommandHandler("importfbans", fed_import_bans, pass_chat
 
 DELETEBTN_FED_HANDLER = CallbackQueryHandler(del_fed_button, pattern=r"rmfed_")
 
+dispatcher.add_handler(STAT_FED_HANDLER)
 dispatcher.add_handler(NEW_FED_HANDLER)
 dispatcher.add_handler(DEL_FED_HANDLER)
 dispatcher.add_handler(JOIN_FED_HANDLER)
