@@ -41,7 +41,8 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             return ""
         else:
             raise
-    if not can_rest(chat,user.id):
+    my_id = update.effective_message.from_user.id
+    if not can_rest(chat,my_id):
         message.reply_text("invalid permission")
         return ""
     if user_id == bot.id:
