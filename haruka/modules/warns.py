@@ -12,7 +12,7 @@ from telegram.utils.helpers import mention_html
 from haruka import dispatcher, BAN_STICKER
 from haruka.modules.disable import DisableAbleCommandHandler
 from haruka.modules.helper_funcs.chat_status import is_user_admin, bot_admin, user_admin_no_reply, user_admin, \
-    can_restrict,is_user_res
+    can_restrict,can_rest
 from haruka.modules.helper_funcs.extraction import extract_text, extract_user_and_text, extract_user
 from haruka.modules.helper_funcs.filters import CustomFilters
 from haruka.modules.helper_funcs.misc import split_message
@@ -29,8 +29,8 @@ def warn(user: User, chat: Chat, update: Update, reason: str, message: Message, 
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    if is_rest(chat,user.id):
-        message.reply_text("I'm not going to warn an admin!")
+    if can_rest(chat,user.id):
+        message.reply_text("I'm not going to warn -an admin!")
         return ""
 
     if warner:
