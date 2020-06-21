@@ -34,7 +34,7 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if not member:
         member = chat.get_member(user_id)
     return member.status in ('administrator', 'creator')
-def is_user_res(chat:Chat , user_id:int , member:ChatMember=None) ->bool:
+def is_user_res(update: Update , user_id:int , member:ChatMember=None) ->bool:
      if chat.effective_chat.get_member(user_id).can_restrict_members:
             return True
      else:
