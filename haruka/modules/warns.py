@@ -29,9 +29,6 @@ def warn(user: User, chat: Chat, update: Update, reason: str, message: Message, 
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    if can_rest(chat,user.id):
-        message.reply_text("I'm not going to warn -an admin!")
-        return ""
 
     if warner:
         warner_tag = mention_html(warner.id, warner.first_name)
