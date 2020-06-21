@@ -45,7 +45,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     my_id = repl_message.from_user.id
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
-    if not memberi.can_restrict_members:
+    if not memberi.status=="restrict":
         message.reply_text("invalid permission{}{}".format(my_id,mmy_id))
         return ""
     if user_id == bot.id:
