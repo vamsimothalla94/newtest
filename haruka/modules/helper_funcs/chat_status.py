@@ -44,7 +44,9 @@ def is_bot_admin(chat: Chat, bot_id: int, bot_member: ChatMember = None) -> bool
     if not bot_member:
         bot_member = chat.get_member(bot_id)
     return bot_member.status in ('administrator', 'creator')
-
+def is_rest(chat:Chat,user_id:int,member:ChatMember=None)->bool:
+    if chat.get_member(user_id).can_restrict_members:
+        return true
 
 def is_user_in_chat(chat: Chat, user_id: int) -> bool:
     member = chat.get_member(user_id)
