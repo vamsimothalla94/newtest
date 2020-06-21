@@ -87,16 +87,6 @@ def can_promote(func):
                                                 "Make sure I'm admin and can appoint new admins.")
 
     return promote_rights
-def user_can_restrict(func):
-    @wraps(func)
-    def promote_rights(update: Update, user_id: int, member: ChatMember = None *args, **kwargs):
-        if update.effective_chat.get_member(user_id).can_restrict_members:
-            return func( update,user_id *args, **kwargs)
-        else:
-            update.effective_message.reply_text("I can't restrict people here! "
-                                                "Make sure I'm admin and can appoint new admins.")
-
-    return promote_rights
 
 def can_restrict(func):
     @wraps(func)
