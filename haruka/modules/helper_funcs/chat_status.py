@@ -37,7 +37,6 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if not member:
         member = chat.get_member(user_id)
     return member.status in ('administrator', 'creator')
-                                                "Make sure I'm admin and can appoint new admins.")
 
 def is_bot_admin(chat: Chat, bot_id: int, bot_member: ChatMember = None) -> bool:
     if chat.type == 'private' \
