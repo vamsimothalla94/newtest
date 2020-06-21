@@ -36,7 +36,7 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     return member.status in ('administrator', 'creator')
 def is_user_res(chat:Chat , user_id:int , member:ChatMember=None) ->bool:
      if update.effective_chat.get_member(user_id).can_restrict_members:
-            return func(bot, update, *args, **kwargs)
+            return True
      else:
             update.effective_message.reply_text("I can't restrict people here! "
                                                 "Make sure I'm admin and can appoint new admins.")
