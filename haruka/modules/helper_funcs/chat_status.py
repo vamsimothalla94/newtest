@@ -34,11 +34,6 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if not member:
         member = chat.get_member(user_id)
     return member.status in ('administrator', 'creator')
-def is_user_res(update: Update , user_id:int , member:ChatMember=None) ->bool:
-     if update.effective_chat.get_member(user_id).can_restrict_members:
-            return True
-     else:
-            update.effective_message.reply_text("I can't restrict people here! "
                                                 "Make sure I'm admin and can appoint new admins.")
 
 def is_bot_admin(chat: Chat, bot_id: int, bot_member: ChatMember = None) -> bool:
@@ -90,7 +85,16 @@ def can_promote(func):
                                                 "Make sure I'm admin and can appoint new admins.")
 
     return promote_rights
+def user_can_restrict(func):
+    @wraps(func)
+    def promote_rights(update: Update, user_id: int, member: ChatMember = None *args, **kwargs):
+        if update.effective_chat.get_member(user_id).can_restrict_members:
+            return func( update,user_id *args, **kwargs)
+        else:
+            update.effective_message.reply_text("I can't restrict people here! "
+                                                "Make sure I'm admin and can appoint new admins.")
 
+    return promote_rights
 
 def can_restrict(func):
     @wraps(func)
