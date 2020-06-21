@@ -9,11 +9,9 @@ from haruka.modules.translations.strings import tld
 
 import haruka.modules.sql.antispam_sql as sql
 
+
 def can_delete(chat: Chat, bot_id: int) -> bool:
     return chat.get_member(bot_id).can_delete_messages
-
-def can_rest(chat: Chat, user_id: int) -> bool:
-    return chat.get_member(user_id).can_restrict_members
 
 
 def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
@@ -37,6 +35,7 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     if not member:
         member = chat.get_member(user_id)
     return member.status in ('administrator', 'creator')
+
 
 def is_bot_admin(chat: Chat, bot_id: int, bot_member: ChatMember = None) -> bool:
     if chat.type == 'private' \
@@ -87,6 +86,7 @@ def can_promote(func):
                                                 "Make sure I'm admin and can appoint new admins.")
 
     return promote_rights
+
 
 def can_restrict(func):
     @wraps(func)
