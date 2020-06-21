@@ -29,7 +29,7 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    if can_rest(chat, user.id):
+    if not can_rest(chat, user.id):
         message.reply_text("invalid permission")
         return ""
 
