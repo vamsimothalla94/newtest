@@ -9,7 +9,7 @@ from telegram.utils.helpers import mention_html
 from haruka import dispatcher, BAN_STICKER, LOGGER
 from haruka.modules.disable import DisableAbleCommandHandler
 from haruka.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
-    is_user_admin, is_user_in_chat
+    is_user_admin, is_user_in_chat,can_rest
 from haruka.modules.helper_funcs.extraction import extract_user_and_text
 from haruka.modules.helper_funcs.string_handling import extract_time
 from haruka.modules.log_channel import loggable
