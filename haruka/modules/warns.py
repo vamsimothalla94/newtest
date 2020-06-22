@@ -32,7 +32,7 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
     if warner:
         warner_tag = mention_html(warner.id, warner.first_name)
