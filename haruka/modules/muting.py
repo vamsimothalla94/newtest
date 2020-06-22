@@ -50,7 +50,7 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
     if member:
 
@@ -100,7 +100,7 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permission".format(memberi.user.first_name))
         return ""
 
     user_id = extract_user(message, args)
@@ -164,7 +164,7 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permission".format(memberi.user.first_name))
         return ""
     try:
         member = chat.get_member(user_id)
