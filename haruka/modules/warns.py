@@ -29,10 +29,11 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    elif not can_rest(chat, user.id):
-        message.reply_text("invalid permission")
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
         return ""
-
     if warner:
         warner_tag = mention_html(warner.id, warner.first_name)
     else:
