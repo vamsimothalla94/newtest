@@ -46,7 +46,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
     if user_id == bot.id:
         message.reply_text(tld(chat.id, "I'm not gonna BAN myself, are you crazy?"))
@@ -116,7 +116,7 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
     if is_user_ban_protected(chat, user_id, member):
         message.reply_text(tld(chat.id, "This user is ban protected, meaning that you cannot ban this user!"))
@@ -202,7 +202,7 @@ def kick(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
 
     if user_id == bot.id:
@@ -359,7 +359,7 @@ def sban(bot: Bot, update: Update, args: List[str]) -> str:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
 
     if is_user_ban_protected(chat, user_id, member):
