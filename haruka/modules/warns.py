@@ -46,6 +46,7 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
         if soft_warn:  # kick
             chat.unban_member(user.id)
             reply = "{} warnings, {} has been kicked!".format(limit, mention_html(user.id, user.first_name))
+      
 
         else:  # ban
             chat.kick_member(user.id)
@@ -109,6 +110,11 @@ def button(bot: Bot, update: Update) -> str:
             query.answer(text="You are not authorized to remove this warn! Only administrators may remove warns.", show_alert=True)
             return ""
         res = sql.remove_warn(user_id, chat.id)
+
+        memberi=chat.get_member(int(user_id))
+        if not memberi.status=='creator' and not memberi.can_restrict_members:
+           query.answer("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
+           return ""
         if res:
             update.effective_message.edit_text(
                 "Warn removed by {}.".format(mention_html(user.id, user.first_name)),
