@@ -157,7 +157,11 @@ def temp_mute(bot: Bot, update: Update, args: List[str]) -> str:
     if not user_id:
         message.reply_text(tld(chat.id, "You don't seem to be referring to a user."))
         return ""
-
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
