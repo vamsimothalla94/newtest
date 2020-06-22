@@ -97,7 +97,11 @@ def unmute(bot: Bot, update: Update, args: List[str]) -> str:
             exit(1)
         else:
             chatD = chat
-
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
 
     user_id = extract_user(message, args)
     if not user_id:
