@@ -113,7 +113,11 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
             return ""
         else:
             raise
-
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
     if is_user_ban_protected(chat, user_id, member):
         message.reply_text(tld(chat.id, "This user is ban protected, meaning that you cannot ban this user!"))
         return ""
@@ -195,6 +199,11 @@ def kick(bot: Bot, update: Update, args: List[str]) -> str:
             return ""
         else:
             raise
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
 
     if user_id == bot.id:
         message.reply_text("I'm not kicking myself!")
@@ -291,6 +300,11 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
             return ""
         else:
             raise
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
 
     if user_id == bot.id:
         message.reply_text("How would I unban myself if I wasn't here...?")
@@ -333,6 +347,7 @@ def sban(bot: Bot, update: Update, args: List[str]) -> str:
     if not user_id:
         return ""
 
+
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
@@ -340,6 +355,12 @@ def sban(bot: Bot, update: Update, args: List[str]) -> str:
             return ""
         else:
             raise
+
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
 
     if is_user_ban_protected(chat, user_id, member):
         return ""
