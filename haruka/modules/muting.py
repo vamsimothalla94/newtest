@@ -47,7 +47,11 @@ def mute(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
     member = chatD.get_member(int(user_id))
-
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("invalid permission{}{}".format(memberi.status,mmy_id))
+        return ""
     if member:
 
         if user_id in SUDO_USERS:
