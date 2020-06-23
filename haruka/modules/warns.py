@@ -30,6 +30,8 @@ def canres(update :Update)->bool:
     memberi=chat.get_member(int(mmy_id))
     if not memberi.can_restrict_members and not memberi.status=='creator':
          return True
+    else:
+         return False
 def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = None) -> str:
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
