@@ -28,7 +28,7 @@ CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
 def canres(update :update)->bool:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
-    if not memberi.can_restrict_members and not memberi.status='creator':
+    if not memberi.can_restrict_members and not memberi.status=='creator':
          return true
 def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = None) -> str:
     if is_user_admin(chat, user.id):
