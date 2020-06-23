@@ -26,15 +26,18 @@ CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
 
 # Not async
 Update update
-mmy_id = update.effective_message.from_user.id
-memberi=chat.get_member(int(mmy_id))
 
+def canres(update :update)->bool:
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.can_restrict_members and not memberi.status='creator':
+         return true
 def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = None) -> str:
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    if not memberi.status=='creator' and not memberi.can_restrict_members:
-        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
+    if canres:
+        message.reply_text("I'm not going to warn an admin!")
         return ""
     if warner:
         warner_tag = mention_html(warner.id, warner.first_name)
