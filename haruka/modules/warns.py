@@ -25,7 +25,7 @@ CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
 
 
 # Not async
-def canres(update :update)->bool:
+def canres(update :Update)->bool:
     mmy_id = update.effective_message.from_user.id
     memberi=chat.get_member(int(mmy_id))
     if not memberi.can_restrict_members and not memberi.status=='creator':
