@@ -165,7 +165,12 @@ def warn_user(bot: Bot, update: Update, args: List[str]) -> str:
     warner = update.effective_user  # type: Optional[User]
 
     user_id, reason = extract_user_and_text(message, args)
-
+    my_id = repl_message.from_user.id
+    mmy_id = update.effective_message.from_user.id
+    memberi=chat.get_member(int(mmy_id))
+    if not memberi.status=='creator' and not memberi.can_restrict_members:
+        message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
+        return ""
     if user_id:
         if message.reply_to_message and message.reply_to_message.from_user.id == user_id:
             return warn(message.reply_to_message.from_user, chat, reason, message.reply_to_message, warner)
