@@ -29,8 +29,8 @@ def warn(user: User, chat: Chat, reason: str, update: Update, message: Message, 
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    mmy_id=update.effective_message.from_user.id
-    memberi=chat.get_member(int(mmy_id))
+    user=update.effective_user
+    memberi=chat.get_member(int(user.from_user.id))
     if not memberi.status=='creator' and not memberi.can_restrict_members:
         message.reply_text("Dear {} you don't have restriction permissions".format(memberi.user.first_name))
         return ""
