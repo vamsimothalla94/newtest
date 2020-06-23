@@ -32,11 +32,11 @@ def canres(update :Update)->bool:
          return True
     else:
          return False
-def warn(user: User, chat: Chat, reason: str, message: Message, update: Update,warner: User = None) -> str:
+def warn(user: User, chat: Chat, reason: str, message: Message,warner: User = None) -> str:
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
-    if canres(update):
+    if canres(chat):
         message.reply_text("I'm not gone to warn an admin!")
         return ""
     if warner:
