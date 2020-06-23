@@ -25,14 +25,8 @@ CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
 
 
 # Not async
-def canres(update :Update)->bool:
-    mmy_id = update.effective_message.from_user.id
-    memberi=chat.get_member(int(mmy_id))
-    if not memberi.can_restrict_members and not memberi.status=='creator':
-         return True
-    else:
-         return False
-def warn(user: User, chat: Chat, reason: str, message: Message,warner: User = None, update:Update) -> str:
+
+def warn(user: User, chat: Chat, reason: str, message: Message,warner: User = None) -> str:
     if is_user_admin(chat, user.id):
         message.reply_text("I'm not going to warn an admin!")
         return ""
@@ -174,9 +168,9 @@ def warn_user(bot: Bot, update: Update, args: List[str]) -> str:
 
     if user_id:
         if message.reply_to_message and message.reply_to_message.from_user.id == user_id:
-            return warn(message.reply_to_message.from_user, chat, reason, message.reply_to_message, warner, update)
+            return warn(message.reply_to_message.from_user, chat, reason, message.reply_to_message, warner)
         else:
-            return warn(chat.get_member(user_id).user, chat, reason, message, warner, update)
+            return warn(chat.get_member(user_id).user, chat, reason, message, warner)
     else:
         message.reply_text("No user was designated!")
     return ""
