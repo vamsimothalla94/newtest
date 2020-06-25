@@ -48,7 +48,7 @@ class WarnSettings(BASE):
     __tablename__ = "warn_settings"
     chat_id = Column(String(14), primary_key=True)
     warn_limit = Column(Integer, default=3)
-    soft_warn = Column(bool, default=False)
+    soft_warn = Column(Bool, default=False)
 
     def __init__(self, chat_id, warn_limit=3, soft_warn="kick"):
         self.chat_id = str(chat_id)
