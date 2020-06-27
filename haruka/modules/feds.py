@@ -866,7 +866,7 @@ def fstat(bot:Bot, update: Update):
         user = update.effective_user  # type: Optional[User]
         msg = update.effective_message  # type: Optional[Message]
         all_feds=sql.get_all_feds_users_global()
-        update.effective_message.reply_text("executed")
+        update.effective_message.reply_text("executed {}".format(all_feds))
         return
         
 @run_async
