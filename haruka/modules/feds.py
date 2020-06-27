@@ -865,7 +865,7 @@ def fstat(bot:Bot, update: Update):
         chat = update.effective_chat  # type: Optional[Chat]
         user = update.effective_user  # type: Optional[User]
         msg = update.effective_message  # type: Optional[Message]
-        all feds=sql.get_all_feds_users_global()
+        all_feds=sql.get_all_feds_users_global()
         update.effective_message.reply_text("executed")
         return
         
