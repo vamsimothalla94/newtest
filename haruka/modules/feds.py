@@ -860,7 +860,15 @@ def fed_chats(bot: Bot, update: Update, args: List[str]):
 			output.name = "fbanlist.txt"
 			update.effective_message.reply_document(document=output, filename="fbanlist.txt",
 													caption="Here is a list of all the chats that joined the federation {}.".format(info['fname']))
-
+@run_async
+def fstat(bot:Bot, update: Update)
+        chat = update.effective_chat  # type: Optional[Chat]
+	user = update.effective_user  # type: Optional[User]
+	msg = update.effective_message  # type: Optional[Message]
+        all feds=sql.get_all_feds_users_global()
+        update.effective_message.reply_text("executed")
+        return
+        
 @run_async
 def fed_import_bans(bot: Bot, update: Update, chat_data):
 	chat = update.effective_chat  # type: Optional[Chat]
@@ -1047,11 +1055,6 @@ def is_user_fed_owner(fed_id, user_id):
 		return True
 	else:
 		return False
-def fstats(bot, update):
-        all_fbanned = sql.get_all_fban_users_global()
-        all_feds = sql.get_all_feds_users_global()
-        return "{} fbanned users, accross {} feds".format(len(all_fbanned), len(all_feds))
-
 
 
 @run_async
@@ -1144,7 +1147,7 @@ Command:
  - /fedchats: Get all the chats that are connected in the Federation.
  - /importfbans: Reply to the Federation backup message file to import the banned list to the Federation now.
 """
-STAT_FED_HANDLER=CommandHandler("statsf",fstats)
+STAT_FED_HANDLER=CommandHandler("statsf",fstat)
 NEW_FED_HANDLER = CommandHandler("newfed", new_fed)
 DEL_FED_HANDLER = CommandHandler("delfed", del_fed, pass_args=True)
 JOIN_FED_HANDLER = CommandHandler("joinfed", join_fed, pass_args=True)
