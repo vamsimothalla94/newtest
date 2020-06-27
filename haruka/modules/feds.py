@@ -861,7 +861,7 @@ def fed_chats(bot: Bot, update: Update, args: List[str]):
 			update.effective_message.reply_document(document=output, filename="fbanlist.txt",
 													caption="Here is a list of all the chats that joined the federation {}.".format(info['fname']))
 @run_async
-def fstat(bot:Bot, update: Update)
+def fstat(bot:Bot, update: Update):
         chat = update.effective_chat  # type: Optional[Chat]
 	user = update.effective_user  # type: Optional[User]
 	msg = update.effective_message  # type: Optional[Message]
